@@ -41,6 +41,7 @@ namespace VirtualKeyPresser
             this.label4 = new System.Windows.Forms.Label();
             this.t_Interval = new System.Windows.Forms.Timer(this.components);
             this.b_Stop = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lb_SelectedApp
@@ -143,11 +144,21 @@ namespace VirtualKeyPresser
             this.b_Stop.UseVisualStyleBackColor = true;
             this.b_Stop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.b_Stop_MouseMove);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(192, 145);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(228, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "If you wanna stop just come over stop button...";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 372);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.b_Stop);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -178,6 +189,7 @@ namespace VirtualKeyPresser
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer t_Interval;
         private System.Windows.Forms.Button b_Stop;
+        private System.Windows.Forms.Label label5;
     }
 }
 
