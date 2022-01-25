@@ -99,7 +99,7 @@ namespace VirtualKeyPresser
             this.tb_Interval.Name = "tb_Interval";
             this.tb_Interval.Size = new System.Drawing.Size(56, 20);
             this.tb_Interval.TabIndex = 5;
-            this.tb_Interval.Text = "1000";
+            this.tb_Interval.Text = "250";
             this.tb_Interval.TextChanged += new System.EventHandler(this.tb_Interval_TextChanged);
             // 
             // label2
