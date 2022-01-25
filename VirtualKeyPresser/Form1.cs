@@ -17,7 +17,12 @@ namespace VirtualKeyPresser
         public MainForm()
         {
             InitializeComponent();
+            getProcessList();
+        }
+        private void getProcessList()
+        {
             Process[] processes = Process.GetProcesses();
+            lb_SelectedApp.Text = "";
             foreach (Process p in processes)
             {
                 if (!String.IsNullOrEmpty(p.MainWindowTitle))
@@ -32,7 +37,7 @@ namespace VirtualKeyPresser
             l_SelectedApp.Text = lb_SelectedApp.SelectedItem.ToString();
         }
         [DllImport("User32.dll")]
-        static extern int SetForegroundWindow(IntPtr point); 
+        static extern int SetForegroundWindow(IntPtr point);
         private void t_Interval_Tick(object sender, EventArgs e)
         {
             Process p = Process.GetProcessesByName(l_SelectedApp.Text).FirstOrDefault();
@@ -42,13 +47,11 @@ namespace VirtualKeyPresser
                 string sendingkey = "";
                 IntPtr h = p.MainWindowHandle;
                 SetForegroundWindow(h);
-                if (rb_Enter.Checked == true)
-                {
-                    sendingkey = "{ENTER}";
-                    SendKeys.Send(sendingkey);
-                }
-            } 
-        } 
+                if (rb_Enter.Checked == true) sendingkey = "{ENTER}";
+                if (rb_Space.Checked == true) sendingkey = " ";
+                SendKeys.Send(sendingkey);
+            }
+        }
         private void tb_Interval_TextChanged(object sender, EventArgs e)
         {
             if (int.Parse(tb_Interval.Text) < 100) tb_Interval.Text = "100";
@@ -74,8 +77,13 @@ namespace VirtualKeyPresser
                 t_Interval.Enabled = false;
                 MessageBox.Show("Stopped");
                 b_Stop.Enabled = false;
-                b_Start.Enabled = true; 
+                b_Start.Enabled = true;
             }
+        }
+
+        private void b_RefreshList_Click(object sender, EventArgs e)
+        {
+            getProcessList();
         }
     }
 }

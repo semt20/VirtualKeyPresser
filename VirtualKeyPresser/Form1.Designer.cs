@@ -42,16 +42,18 @@ namespace VirtualKeyPresser
             this.t_Interval = new System.Windows.Forms.Timer(this.components);
             this.b_Stop = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.b_RefreshList = new System.Windows.Forms.Button();
+            this.rb_Space = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // lb_SelectedApp
             // 
             this.lb_SelectedApp.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lb_SelectedApp.FormattingEnabled = true;
-            this.lb_SelectedApp.Location = new System.Drawing.Point(0, 186);
+            this.lb_SelectedApp.Location = new System.Drawing.Point(0, 212);
             this.lb_SelectedApp.Name = "lb_SelectedApp";
-            this.lb_SelectedApp.Size = new System.Drawing.Size(591, 186);
-            this.lb_SelectedApp.TabIndex = 0;
+            this.lb_SelectedApp.Size = new System.Drawing.Size(591, 160);
+            this.lb_SelectedApp.TabIndex = 6;
             this.lb_SelectedApp.SelectedIndexChanged += new System.EventHandler(this.lb_SelectedApp_SelectedIndexChanged);
             // 
             // label1
@@ -74,12 +76,10 @@ namespace VirtualKeyPresser
             // rb_Enter
             // 
             this.rb_Enter.AutoSize = true;
-            this.rb_Enter.Checked = true;
-            this.rb_Enter.Location = new System.Drawing.Point(54, 42);
+            this.rb_Enter.Location = new System.Drawing.Point(120, 42);
             this.rb_Enter.Name = "rb_Enter";
             this.rb_Enter.Size = new System.Drawing.Size(50, 17);
-            this.rb_Enter.TabIndex = 3;
-            this.rb_Enter.TabStop = true;
+            this.rb_Enter.TabIndex = 1;
             this.rb_Enter.Text = "Enter";
             this.rb_Enter.UseVisualStyleBackColor = true;
             // 
@@ -88,7 +88,7 @@ namespace VirtualKeyPresser
             this.b_Start.Location = new System.Drawing.Point(16, 111);
             this.b_Start.Name = "b_Start";
             this.b_Start.Size = new System.Drawing.Size(170, 23);
-            this.b_Start.TabIndex = 4;
+            this.b_Start.TabIndex = 3;
             this.b_Start.Text = "Start";
             this.b_Start.UseVisualStyleBackColor = true;
             this.b_Start.Click += new System.EventHandler(this.b_Start_Click);
@@ -98,7 +98,7 @@ namespace VirtualKeyPresser
             this.tb_Interval.Location = new System.Drawing.Point(58, 73);
             this.tb_Interval.Name = "tb_Interval";
             this.tb_Interval.Size = new System.Drawing.Size(56, 20);
-            this.tb_Interval.TabIndex = 5;
+            this.tb_Interval.TabIndex = 2;
             this.tb_Interval.Text = "250";
             this.tb_Interval.TextChanged += new System.EventHandler(this.tb_Interval_TextChanged);
             // 
@@ -139,7 +139,7 @@ namespace VirtualKeyPresser
             this.b_Stop.Location = new System.Drawing.Point(16, 140);
             this.b_Stop.Name = "b_Stop";
             this.b_Stop.Size = new System.Drawing.Size(170, 23);
-            this.b_Stop.TabIndex = 9;
+            this.b_Stop.TabIndex = 4;
             this.b_Stop.Text = "Stop";
             this.b_Stop.UseVisualStyleBackColor = true;
             this.b_Stop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.b_Stop_MouseMove);
@@ -153,11 +153,36 @@ namespace VirtualKeyPresser
             this.label5.TabIndex = 10;
             this.label5.Text = "If you wanna stop just come over stop button...";
             // 
+            // b_RefreshList
+            // 
+            this.b_RefreshList.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.b_RefreshList.Location = new System.Drawing.Point(0, 189);
+            this.b_RefreshList.Name = "b_RefreshList";
+            this.b_RefreshList.Size = new System.Drawing.Size(591, 23);
+            this.b_RefreshList.TabIndex = 5;
+            this.b_RefreshList.Text = "Refresh List";
+            this.b_RefreshList.UseVisualStyleBackColor = true;
+            this.b_RefreshList.Click += new System.EventHandler(this.b_RefreshList_Click);
+            // 
+            // rb_Space
+            // 
+            this.rb_Space.AutoSize = true;
+            this.rb_Space.Checked = true;
+            this.rb_Space.Location = new System.Drawing.Point(58, 42);
+            this.rb_Space.Name = "rb_Space";
+            this.rb_Space.Size = new System.Drawing.Size(56, 17);
+            this.rb_Space.TabIndex = 0;
+            this.rb_Space.TabStop = true;
+            this.rb_Space.Text = "Space";
+            this.rb_Space.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 372);
+            this.Controls.Add(this.rb_Space);
+            this.Controls.Add(this.b_RefreshList);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.b_Stop);
             this.Controls.Add(this.label4);
@@ -190,6 +215,8 @@ namespace VirtualKeyPresser
         private System.Windows.Forms.Timer t_Interval;
         private System.Windows.Forms.Button b_Stop;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button b_RefreshList;
+        private System.Windows.Forms.RadioButton rb_Space;
     }
 }
 
