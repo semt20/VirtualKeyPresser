@@ -21,8 +21,9 @@ namespace VirtualKeyPresser
         }
         private void getProcessList()
         {
+            
             Process[] processes = Process.GetProcesses();
-            lb_SelectedApp.Text = "";
+            lb_SelectedApp.Items.Clear();
             foreach (Process p in processes)
             {
                 if (!String.IsNullOrEmpty(p.MainWindowTitle))
